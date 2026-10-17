@@ -54,7 +54,6 @@
             overflow-x: hidden;
             user-select: none;
         }
-
         /* Custom Warm Scrollbar */
         ::-webkit-scrollbar {
             width: 6px;
@@ -70,7 +69,6 @@
         ::-webkit-scrollbar-thumb:hover {
             background: #D97706;
         }
-
         /* Warm Frosted Glass Surfaces */
         .warm-glass {
             background: rgba(255, 253, 249, 0.82);
@@ -78,7 +76,6 @@
             -webkit-backdrop-filter: blur(24px);
             border: 1px solid rgba(217, 119, 6, 0.16);
         }
-
         .warm-glass-card {
             background: rgba(255, 253, 250, 0.90);
             backdrop-filter: blur(20px);
@@ -90,7 +87,6 @@
             border-color: rgba(245, 158, 11, 0.55);
             box-shadow: 0 28px 55px -15px rgba(217, 119, 6, 0.16);
         }
-
         /* Step Transition Animations */
         .step-section {
             display: none;
@@ -103,7 +99,6 @@
             opacity: 1;
             transform: translateY(0) scale(1);
         }
-
         /* Golden Highlighter Pen Effect for Evidence */
         .golden-highlight {
             background: linear-gradient(120deg, rgba(251, 191, 36, 0.28) 0%, rgba(245, 158, 11, 0.16) 100%);
@@ -113,7 +108,6 @@
             color: #1C1917;
             font-weight: 500;
         }
-
         /* Floating Subtle Animation */
         @keyframes floatSlow {
             0%, 100% { transform: translateY(0px); }
@@ -125,7 +119,6 @@
         .float-pill-delayed {
             animation: floatSlow 5.2s ease-in-out 1.5s infinite;
         }
-
         /* Golden Screen Flash on Lightning Strike */
         @keyframes goldFlash {
             0% { opacity: 0.55; }
@@ -136,7 +129,6 @@
         .strike-flash-active {
             animation: goldFlash 0.6s ease-out forwards;
         }
-
         /* Magnetic Pill Button Shine */
         .btn-liquid-gold {
             background: linear-gradient(135deg, #1C1917 0%, #292524 100%);
@@ -153,16 +145,12 @@
     </style>
 </head>
 <body class="min-h-screen flex flex-col selection:bg-amber-200 selection:text-espresso">
-
     <!-- Interactive Warm Golden Lightning Canvas -->
     <canvas id="goldLightningCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
-
     <!-- Warm Golden Flash Overlay on Transitions -->
     <div id="goldFlashOverlay" class="fixed inset-0 bg-amber-300 pointer-events-none z-50 opacity-0"></div>
-
     <!-- Minimalist Floating Toast Notification -->
     <div id="toastBox" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
-
     <!-- ==========================================================================
          MINIMALIST TOP FLOATING NAVIGATION & STEP PROGRESS BAR
          ========================================================================== -->
@@ -178,7 +166,6 @@
                     <span class="hidden sm:inline-block text-[10px] font-mono uppercase tracking-widest text-amber-700 bg-amber-100/80 px-2 py-0.5 rounded-full ml-1.5">Unasked Engine</span>
                 </div>
             </button>
-
             <!-- 5-Step Interactive Journey Pill -->
             <nav class="flex items-center gap-1 sm:gap-2">
                 <button onclick="goToStep(1)" id="nav-step-1" class="step-dot px-2.5 py-1 rounded-full text-xs font-medium transition-all bg-espresso text-alabaster">
@@ -201,7 +188,6 @@
                     5. Healed Spec
                 </button>
             </nav>
-
             <!-- User Badge & Sound Toggle -->
             <div class="flex items-center gap-2">
                 <div id="userHeaderBadge" class="hidden md:flex items-center gap-1.5 px-3 py-1 rounded-full bg-ivory border border-amber-500/20 text-xs font-medium text-espresso">
@@ -214,12 +200,10 @@
             </div>
         </div>
     </header>
-
     <!-- ==========================================================================
          MAIN GUIDED STAGE CONTAINER
          ========================================================================== -->
     <main class="flex-1 flex flex-col justify-center items-center px-4 sm:px-6 py-6 relative z-10 max-w-5xl w-full mx-auto">
-
         <!-- ======================================================================
              STEP 1: HERO SPLASH ("LET'S START")
              ====================================================================== -->
@@ -240,16 +224,13 @@
                     1-Click Auto-Heal Specs
                 </span>
             </div>
-
             <!-- Editorial Headline -->
             <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl text-espresso leading-[1.04] tracking-tight max-w-4xl mb-6">
                 Every failure begins with the <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-orange-600 to-rose-600">question</span> nobody thought to ask.
             </h1>
-
             <p class="text-base sm:text-lg text-stonewarm max-w-xl mx-auto leading-relaxed mb-10 font-normal">
                 Drop any project idea, dataset, or workflow. Watch golden lightning illuminate hidden blindspots, prioritize impact, and heal your blueprint in seconds.
             </p>
-
             <!-- Magnetic CTA Button -->
             <div class="flex flex-col sm:flex-row items-center gap-4">
                 <button onclick="goToStep(2)" class="btn-liquid-gold px-9 py-4 rounded-full text-base font-semibold border border-amber-500/40 shadow-gold-glow flex items-center gap-3 group">
@@ -258,21 +239,17 @@
                         <i data-lucide="zap" class="w-4 h-4 fill-current"></i>
                     </span>
                 </button>
-
                 <button onclick="quickJumpDemo()" class="px-6 py-4 rounded-full warm-glass hover:bg-white text-sm font-medium text-stonewarm hover:text-espresso transition-all flex items-center gap-2">
                     <span>Instant 1-Click Demo</span>
                     <i data-lucide="arrow-up-right" class="w-4 h-4 text-amber-600"></i>
                 </button>
             </div>
-
             <!-- Interactive Cursor Hint -->
             <p class="mt-14 text-xs font-mono uppercase tracking-widest text-stone-400 flex items-center gap-2">
                 <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
                 Move cursor or tap anywhere to arc golden lightning
             </p>
         </section>
-
-
         <!-- ======================================================================
              STEP 2: FRICTIONLESS STUDIO LOGIN & PERSONA LENS
              ====================================================================== -->
@@ -280,17 +257,14 @@
             <div class="warm-glass-card w-full rounded-3xl p-7 sm:p-10 shadow-warm-card relative overflow-hidden">
                 <!-- Decorative Warm Top Glow -->
                 <div class=" -top-20 -right-20 w-44 h-44 bg-amber-400/20 rounded-full blur-3xl pointer-events-none absolute"></div>
-
                 <div class="flex items-center justify-between mb-6">
                     <span class="text-xs font-mono uppercase tracking-widest text-amber-700 bg-amber-100/90 px-3 py-1 rounded-full font-semibold">Step 1 of 4 • Studio Pass</span>
                     <button onclick="skipLoginAsGuest()" class="text-xs font-medium text-amber-700 hover:text-orange-700 underline underline-offset-4">
                         Skip → Instant Guest
                     </button>
                 </div>
-
                 <h2 class="font-serif text-4xl sm:text-5xl text-espresso mb-2">Who is stepping into the studio?</h2>
                 <p class="text-sm text-stonewarm mb-7">We tailor the unasked questions to your role and thinking lens.</p>
-
                 <!-- Simple Name Field -->
                 <div class="mb-6">
                     <label class="block text-xs font-mono uppercase tracking-wider text-stonewarm mb-2">Your Name or Handle</label>
@@ -300,7 +274,6 @@
                         <i data-lucide="user-check" class="w-4 h-4 text-amber-600 absolute right-4 top-1/2 -translate-y-1/2"></i>
                     </div>
                 </div>
-
                 <!-- Choose Thinking Lens (3 Tactile Cards) -->
                 <div class="mb-8">
                     <label class="block text-xs font-mono uppercase tracking-wider text-stonewarm mb-2.5">Select Your Primary Lens</label>
@@ -312,7 +285,6 @@
                             <div class="font-bold text-xs text-espresso">Founder & Product</div>
                             <div class="text-[11px] text-stonewarm mt-0.5">Users, edge-cases & trust</div>
                         </button>
-
                         <button type="button" onclick="selectPersona('ARCHITECT', this)" class="persona-card text-left p-3.5 rounded-2xl border border-stone-200 bg-alabaster/70 hover:border-amber-400 transition-all">
                             <div class="w-8 h-8 rounded-xl bg-stone-200 text-espresso flex items-center justify-center mb-2">
                                 <i data-lucide="cpu" class="w-4 h-4"></i>
@@ -320,7 +292,6 @@
                             <div class="font-bold text-xs text-espresso">System Architect</div>
                             <div class="text-[11px] text-stonewarm mt-0.5">Scale, latency & outages</div>
                         </button>
-
                         <button type="button" onclick="selectPersona('RISK', this)" class="persona-card text-left p-3.5 rounded-2xl border border-stone-200 bg-alabaster/70 hover:border-amber-400 transition-all">
                             <div class="w-8 h-8 rounded-xl bg-stone-200 text-espresso flex items-center justify-center mb-2">
                                 <i data-lucide="shield-alert" class="w-4 h-4"></i>
@@ -330,7 +301,6 @@
                         </button>
                     </div>
                 </div>
-
                 <!-- Continue Button -->
                 <button onclick="completeLogin()" class="w-full btn-liquid-gold py-4 rounded-2xl text-sm font-semibold flex items-center justify-center gap-2 shadow-gold-glow">
                     <span>Enter Lightning Studio</span>
@@ -338,8 +308,6 @@
                 </button>
             </div>
         </section>
-
-
         <!-- ======================================================================
              STEP 3: EFFORTLESS INPUT ("WHERE DO I ADD CONTENT?" -> CRYSTAL CLEAR!)
              ====================================================================== -->
@@ -351,8 +319,1164 @@
                 </h2>
                 <p class="text-sm text-stonewarm">Pick a ready-made blueprint below with one click, or type your own project idea in the box.</p>
             </div>
-
             <!-- 3 Visual 1-Click Ready Blueprints (Covers Document, Dataset, Workflow from Problem Statement) -->
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full mb-6">
                 
                 <!-- Card 1: Project Document -->
+                <div onclick="chooseBlueprint('fintech')" id="bp-fintech" class="bp-card warm-glass-card rounded-3xl p-5 cursor-pointer border-2 border-amber-500 shadow-warm-hover relative">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-amber-100 text-amber-800 font-semibold">📄 Project Document</span>
+                        <span class="w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center text-xs check-badge">✓</span>
+                    </div>
+                    <h3 class="font-serif text-2xl text-espresso mb-1">Instant Cross-Border Payout App</h3>
+                    <p class="text-xs text-stonewarm leading-relaxed">Migrating nightly bank batch settlements to a real-time 18,000 TPS ledger with 5x instant retries & 30-day cached KYC.</p>
+                </div>
+                <!-- Card 2: Dataset Spec -->
+                <div onclick="chooseBlueprint('healthcare')" id="bp-healthcare" class="bp-card warm-glass-card rounded-3xl p-5 cursor-pointer border border-stone-200/80 relative">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-orange-100 text-orange-800 font-semibold">🧬 Dataset Schema</span>
+                        <span class="w-6 h-6 rounded-full bg-stone-200 text-stone-500 flex items-center justify-center text-xs check-badge">+</span>
+                    </div>
+                    <h3 class="font-serif text-2xl text-espresso mb-1">Clinical AI Sepsis Triage Data</h3>
+                    <p class="text-xs text-stonewarm leading-relaxed">420,000 urban hospital EHR records trained with antibiotic timestamps, mean lactate imputation, and random 80/20 row split.</p>
+                </div>
+                <!-- Card 3: Workflow -->
+                <div onclick="chooseBlueprint('drone')" id="bp-drone" class="bp-card warm-glass-card rounded-3xl p-5 cursor-pointer border border-stone-200/80 relative">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-[10px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-full bg-rose-100 text-rose-800 font-semibold">⚡ Live Workflow</span>
+                        <span class="w-6 h-6 rounded-full bg-stone-200 text-stone-500 flex items-center justify-center text-xs check-badge">+</span>
+                    </div>
+                    <h3 class="font-serif text-2xl text-espresso mb-1">Autonomous Drone Blood Delivery</h3>
+                    <p class="text-xs text-stonewarm leading-relaxed">-20°C cold-chain quadcopter flying 28km on 5G telemetry with 8% battery reserve and automatic GPS winch drop.</p>
+                </div>
+            </div>
+            <!-- Crystal-Clear Editable Input Box -->
+            <div class="warm-glass-card w-full rounded-3xl p-5 sm:p-6 shadow-warm-card mb-7">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-amber-500"></span>
+                        <span class="text-xs font-mono uppercase tracking-wider text-espresso font-semibold">Your Blueprint / Specification Text (Editable)</span>
+                    </div>
+                    <label class="cursor-pointer text-xs font-mono text-amber-700 hover:text-orange-700 flex items-center gap-1.5 bg-amber-50 px-3 py-1 rounded-full border border-amber-200">
+                        <i data-lucide="upload" class="w-3.5 h-3.5"></i>
+                        <span>Upload .TXT / .MD / .CSV</span>
+                        <input type="file" accept=".txt,.md,.csv,.json" class="hidden" onchange="uploadCustomFile(event)">
+                    </label>
+                </div>
+                <textarea id="blueprintInputArea" rows="4" 
+                    class="w-full rounded-2xl bg-alabaster/90 border border-stone-300 focus:border-amber-500 focus:bg-white p-4 text-sm text-espresso leading-relaxed focus:outline-none transition-all resize-none"
+                    placeholder="Or type/paste your own project idea, dataset description, or workflow here..."></textarea>
+                <div class="mt-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <p class="text-xs text-stonewarm flex items-center gap-1.5">
+                        <i data-lucide="sparkles" class="w-4 h-4 text-amber-500"></i>
+                        <span>Aura will extract <strong>Unasked Questions</strong>, <strong>Missing Assumptions</strong>, and <strong>Overlooked Constraints</strong>.</span>
+                    </p>
+                    <button onclick="runLightningStrikeScan()" id="strikeScanBtn" class="w-full sm:w-auto btn-liquid-gold px-8 py-4 rounded-2xl text-sm font-semibold flex items-center justify-center gap-2.5 shadow-gold-glow shrink-0">
+                        <i data-lucide="zap" class="w-4 h-4 text-amber-400 fill-amber-400"></i>
+                        <span>Strike & Uncover Blindspots</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- ======================================================================
+             STEP 4: THE LIGHTNING REVEAL — INTERACTIVE TACTILE CARD DECK
+             ====================================================================== -->
+        <section id="step-4" class="step-section w-full flex-col items-center py-2">
+            
+            <!-- Brief Kinetic Scanning Overlay (Shown for 1.4s during transition) -->
+            <div id="scanningOverlay" class="hidden w-full py-20 flex-col items-center justify-center text-center">
+                <div class="w-20 h-20 rounded-full bg-amber-100 border-2 border-amber-500 flex items-center justify-center mb-6 shadow-gold-glow animate-pulse">
+                    <i data-lucide="zap" class="w-9 h-9 text-amber-600 fill-amber-500"></i>
+                </div>
+                <h3 class="font-serif text-4xl text-espresso mb-2" id="scanStatusHeadline">Tracing hidden assumptions...</h3>
+                <p class="text-xs font-mono uppercase tracking-widest text-amber-700">High-Voltage Cognitive Pass in Progress</p>
+            </div>
+            <!-- Interactive Deck Container -->
+            <div id="deckWorkspace" class="w-full flex flex-col">
+                
+                <!-- Top Telemetry Bar: Clarity Ring + Category Filter Pills -->
+                <div class="flex flex-wrap items-center justify-between gap-4 mb-6">
+                    
+                    <!-- Left: Blueprint Title & Readiness Score Ring -->
+                    <div class="warm-glass rounded-2xl px-4 py-2.5 flex items-center gap-3.5 shadow-sm">
+                        <div class="relative w-12 h-12 flex items-center justify-center">
+                            <svg class="w-full h-full -rotate-90" viewBox="0 0 36 36">
+                                <path class="text-stone-200" stroke-width="3.8" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                                <path id="clarityRingPath" class="text-amber-500 transition-all duration-700" stroke-dasharray="48, 100" stroke-width="3.8" stroke-linecap="round" stroke="currentColor" fill="none" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"/>
+                            </svg>
+                            <span id="clarityPercentText" class="text-xs font-bold text-espresso absolute">48%</span>
+                        </div>
+                        <div>
+                            <div class="text-[10px] font-mono uppercase tracking-wider text-stonewarm">Blueprint Immunity</div>
+                            <div id="healedCounterText" class="text-xs font-bold text-espresso">0 of 4 Blindspots Healed</div>
+                        </div>
+                    </div>
+                    <!-- Center: Clean Category Filter Pills -->
+                    <div class="flex flex-wrap items-center gap-1.5 warm-glass p-1.5 rounded-full shadow-sm">
+                        <button onclick="filterDeck('ALL')" id="filter-ALL" class="deck-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-espresso text-alabaster transition-all">
+                            All (<span id="count-ALL">4</span>)
+                        </button>
+                        <button onclick="filterDeck('UNASKED_QUESTION')" id="filter-UNASKED_QUESTION" class="deck-filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium text-stonewarm hover:text-espresso transition-all">
+                            ❓ Unasked Questions
+                        </button>
+                        <button onclick="filterDeck('MISSING_ASSUMPTION')" id="filter-MISSING_ASSUMPTION" class="deck-filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium text-stonewarm hover:text-espresso transition-all">
+                            👁️ Missing Assumptions
+                        </button>
+                        <button onclick="filterDeck('OVERLOOKED_CONSTRAINT')" id="filter-OVERLOOKED_CONSTRAINT" class="deck-filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium text-stonewarm hover:text-espresso transition-all">
+                            🔒 Overlooked Constraints
+                        </button>
+                    </div>
+                    <!-- Right: Proceed to Step 5 CTA -->
+                    <button onclick="goToStep(5)" class="px-5 py-2.5 rounded-full bg-amber-500 hover:bg-amber-600 text-espresso font-semibold text-xs shadow-md transition-all flex items-center gap-2">
+                        <span>View Healed Blueprint</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                    </button>
+                </div>
+                <!-- MAIN FOCUS CARD STAGE (1 Card at a time for zero visual clutter + tactile navigation) -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+                    
+                    <!-- Left Mini Selector Rail (4 Cols) -->
+                    <div class="lg:col-span-4 flex flex-col justify-between gap-3">
+                        <div id="miniCardList" class="space-y-2.5">
+                            <!-- Populated dynamically -->
+                        </div>
+                        <button onclick="healAllCards()" class="w-full py-3 rounded-2xl bg-emerald-600/10 hover:bg-emerald-600/20 border border-emerald-600/30 text-emerald-800 font-semibold text-xs flex items-center justify-center gap-2 transition-all">
+                            <i data-lucide="sparkles" class="w-4 h-4"></i>
+                            <span>Heal All Blindspots Simultaneously</span>
+                        </button>
+                    </div>
+                    <!-- Right Spotlight Discovery Card (8 Cols) -->
+                    <div class="lg:col-span-8 flex flex-col">
+                        <div id="spotlightCardContainer" class="warm-glass-card rounded-3xl p-6 sm:p-9 shadow-warm-card flex-1 flex flex-col justify-between relative overflow-hidden">
+                            <!-- Populated dynamically -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ======================================================================
+             STEP 5: THE UPGRADED BLUEPRINT & "WHAT-IF" SPARK SIMULATOR
+             ====================================================================== -->
+        <section id="step-5" class="step-section w-full flex-col items-center py-2">
+            
+            <div class="text-center max-w-2xl mx-auto mb-6">
+                <span class="text-xs font-mono uppercase tracking-widest text-emerald-800 bg-emerald-100 px-3 py-1 rounded-full font-semibold">Step 4 of 4 • Living Blueprint</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-espresso mt-2 mb-1">Your Fortified Specification</h2>
+                <p class="text-sm text-stonewarm">Every blindspot you healed is now woven directly into your blueprint—plus you can stress-test new scenarios below.</p>
+            </div>
+            <!-- SHOWSTOPPER ADD-ON 1: INTERACTIVE "WHAT-IF" SPARK BAR -->
+            <div class="warm-glass-card w-full rounded-3xl p-5 shadow-warm-card mb-6 border-2 border-amber-500/40">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-2.5">
+                    <span class="text-xs font-mono uppercase tracking-wider text-amber-800 font-bold flex items-center gap-1.5">
+                        <i data-lucide="zap" class="w-4 h-4 text-amber-600 fill-amber-500"></i>
+                        Interactive "What-If" Stress-Test Simulator
+                    </span>
+                    <div class="flex flex-wrap gap-1.5">
+                        <button onclick="triggerQuickWhatIf('What if traffic spikes 50x during a regional network outage?')" class="text-[11px] px-2.5 py-1 rounded-full bg-amber-100/80 hover:bg-amber-200 text-amber-900 font-medium transition-colors">
+                            ⚡ "What if traffic spikes 50x?"
+                        </button>
+                        <button onclick="triggerQuickWhatIf('What if a strict privacy regulator audits our logs tomorrow?')" class="text-[11px] px-2.5 py-1 rounded-full bg-orange-100/80 hover:bg-orange-200 text-orange-900 font-medium transition-colors">
+                            🛡️ "What if regulators audit us?"
+                        </button>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-2.5">
+                    <input id="whatIfInput" type="text" onkeydown="if(event.key==='Enter') runWhatIfSpark()"
+                        placeholder="Ask any 'What if...' scenario to strike a new blindspot card on the fly..."
+                        class="flex-1 px-4 py-3 rounded-2xl bg-alabaster border border-stone-300 focus:border-amber-500 focus:bg-white text-sm text-espresso focus:outline-none">
+                    <button onclick="runWhatIfSpark()" id="whatIfBtn" class="btn-liquid-gold px-6 py-3 rounded-2xl text-xs font-semibold flex items-center justify-center gap-2 shrink-0">
+                        <span>Spark Scenario</span>
+                        <i data-lucide="sparkles" class="w-4 h-4 text-amber-400"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- SHOWSTOPPER ADD-ON 2: LIVING DIFF BLUEPRINT + VOICE BRIEFING -->
+            <div class="warm-glass-card w-full rounded-3xl p-6 sm:p-8 shadow-warm-card">
+                <div class="flex flex-wrap items-center justify-between gap-3 pb-4 mb-5 border-b border-stone-200">
+                    <div>
+                        <h3 id="finalDocTitle" class="font-serif text-2xl sm:text-3xl text-espresso">Instant Cross-Border Payout App</h3>
+                        <p class="text-xs text-stonewarm">Original text shown with <span class="text-emerald-700 font-semibold">✨ Golden-Emerald Healed Safeguards</span> automatically injected</p>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-2">
+                        <button onclick="speakExecutiveSummary()" id="voiceSummaryBtn" class="px-4 py-2.5 rounded-full bg-amber-100 hover:bg-amber-200 text-amber-900 text-xs font-semibold flex items-center gap-2 transition-all">
+                            <i data-lucide="volume-2" class="w-4 h-4"></i>
+                            <span id="voiceSummaryText">Listen to 20s Voice Brief</span>
+                        </button>
+                        <button onclick="copyFinalSpec()" class="btn-liquid-gold px-5 py-2.5 rounded-full text-xs font-semibold flex items-center gap-2">
+                            <i data-lucide="copy" class="w-3.5 h-3.5 text-amber-400"></i>
+                            <span>Copy Upgraded Blueprint</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Rendered Upgraded Spec with Visual Diff Clauses -->
+                <div id="upgradedSpecViewer" class="space-y-4 text-sm text-espresso leading-relaxed bg-alabaster/70 p-5 sm:p-6 rounded-2xl border border-stone-200/80 max-h-[380px] overflow-y-auto">
+                    <!-- Populated via JS -->
+                </div>
+                <div class="mt-6 flex items-center justify-between">
+                    <button onclick="goToStep(4)" class="text-xs font-medium text-stonewarm hover:text-espresso flex items-center gap-1.5">
+                        <i data-lucide="arrow-left" class="w-4 h-4"></i>
+                        <span>Back to Blindspot Deck</span>
+                    </button>
+                    <button onclick="goToStep(3)" class="text-xs font-semibold text-amber-700 hover:text-orange-700 flex items-center gap-1.5">
+                        <i data-lucide="rotate-ccw" class="w-3.5 h-3.5"></i>
+                        <span>Analyze Another Blueprint</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script>
+        // ============================================================================
+        // 1. WARM GOLDEN LIGHTNING CANVAS ENGINE (ZERO BLUE — ONLY GOLD, AMBER, CORAL)
+        // ============================================================================
+        const canvas = document.getElementById('goldLightningCanvas');
+        const ctx = canvas.getContext('2d');
+        let bolts = [];
+        let sparks = [];
+        let mousePos = { x: window.innerWidth / 2, y: window.innerHeight / 3 };
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+        window.addEventListener('mousemove', (e) => {
+            mousePos.x = e.clientX;
+            mousePos.y = e.clientY;
+            if (Math.random() < 0.14) {
+                sparks.push(new GoldSpark(e.clientX, e.clientY));
+            }
+        });
+        window.addEventListener('click', (e) => {
+            spawnGoldenBolt(e.clientX, 0, e.clientX + (Math.random() - 0.5) * 140, e.clientY, true);
+            for (let i = 0; i < 10; i++) {
+                sparks.push(new GoldSpark(e.clientX, e.clientY));
+            }
+        });
+        class GoldBolt {
+            constructor(x1, y1, x2, y2, intense = false) {
+                this.segments = [];
+                this.alpha = intense ? 0.95 : 0.45;
+                this.color = intense ? '#D97706' : '#F59E0B';
+                this.thickness = intense ? 2.2 : 1.1;
+                this.generate(x1, y1, x2, y2, 65);
+            }
+            generate(x1, y1, x2, y2, disp) {
+                if (disp < 5) {
+                    this.segments.push({ x1, y1, x2, y2 });
+                } else {
+                    let mx = (x1 + x2) / 2 + (Math.random() - 0.5) * disp;
+                    let my = (y1 + y2) / 2 + (Math.random() - 0.5) * disp;
+                    this.generate(x1, y1, mx, my, disp / 2);
+                    this.generate(mx, my, x2, y2, disp / 2);
+                }
+            }
+            draw() {
+                ctx.save();
+                ctx.strokeStyle = this.color;
+                ctx.globalAlpha = this.alpha;
+                ctx.lineWidth = this.thickness;
+                ctx.shadowColor = '#F59E0B';
+                ctx.shadowBlur = 14;
+                ctx.beginPath();
+                for (const s of this.segments) {
+                    ctx.moveTo(s.x1, s.y1);
+                    ctx.lineTo(s.x2, s.y2);
+                }
+                ctx.stroke();
+                ctx.restore();
+                this.alpha -= 0.032;
+            }
+        }
+        class GoldSpark {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+                this.vx = (Math.random() - 0.5) * 3.5;
+                this.vy = (Math.random() - 0.5) * 3.5 - 1;
+                this.radius = Math.random() * 2.5 + 1;
+                this.alpha = 0.9;
+                this.color = Math.random() > 0.4 ? '#F59E0B' : '#EA580C';
+            }
+            draw() {
+                this.x += this.vx;
+                this.y += this.vy;
+                this.alpha -= 0.028;
+                ctx.save();
+                ctx.fillStyle = this.color;
+                ctx.globalAlpha = Math.max(0, this.alpha);
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fill();
+                ctx.restore();
+            }
+        }
+        function spawnGoldenBolt(x1, y1, x2, y2, intense = false) {
+            bolts.push(new GoldBolt(x1, y1, x2, y2, intense));
+        }
+        function triggerGoldenStrikeFlash() {
+            playAcousticChime('strike');
+            const overlay = document.getElementById('goldFlashOverlay');
+            overlay.classList.remove('strike-flash-active');
+            void overlay.offsetWidth;
+            overlay.classList.add('strike-flash-active');
+            for (let i = 0; i < 3; i++) {
+                setTimeout(() => {
+                    const sx = Math.random() * canvas.width;
+                    spawnGoldenBolt(sx, 0, sx + (Math.random() - 0.5) * 300, canvas.height * 0.75, true);
+                }, i * 80);
+            }
+        }
+        function animateGoldenCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            if (Math.random() < 0.015) {
+                const sx = Math.random() * canvas.width;
+                spawnGoldenBolt(sx, 0, mousePos.x + (Math.random() - 0.5) * 250, mousePos.y + (Math.random() - 0.5) * 200, false);
+            }
+            bolts = bolts.filter(b => b.alpha > 0);
+            bolts.forEach(b => b.draw());
+            sparks = sparks.filter(s => s.alpha > 0);
+            sparks.forEach(s => s.draw());
+            requestAnimationFrame(animateGoldenCanvas);
+        }
+        // ============================================================================
+        // 2. WARM ACOUSTIC CHIME & SPARK SYNTHESIZER
+        // ============================================================================
+        let soundEnabled = true;
+        let audioCtx = null;
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            const btn = document.getElementById('soundToggleBtn');
+            btn.innerHTML = `<i data-lucide="${soundEnabled ? 'volume-2' : 'volume-x'}" class="w-4 h-4"></i>`;
+            lucide.createIcons();
+            showWarmToast(soundEnabled ? "Acoustic chimes enabled" : "Audio muted");
+        }
+        function playAcousticChime(type = 'tap') {
+            if (!soundEnabled) return;
+            try {
+                if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+                if (audioCtx.state === 'suspended') audioCtx.resume();
+                const now = audioCtx.currentTime;
+                const osc = audioCtx.createOscillator();
+                const gain = audioCtx.createGain();
+                if (type === 'heal') {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(523.25, now); // C5
+                    osc.frequency.exponentialRampToValueAtTime(783.99, now + 0.22); // G5
+                    gain.gain.setValueAtTime(0.08, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start(now);
+                    osc.stop(now + 0.25);
+                } else if (type === 'strike') {
+                    osc.type = 'triangle';
+                    osc.frequency.setValueAtTime(220, now);
+                    osc.frequency.exponentialRampToValueAtTime(440, now + 0.28);
+                    gain.gain.setValueAtTime(0.09, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.30);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start(now);
+                    osc.stop(now + 0.30);
+                } else {
+                    osc.type = 'sine';
+                    osc.frequency.setValueAtTime(440, now);
+                    osc.frequency.exponentialRampToValueAtTime(587.33, now + 0.09);
+                    gain.gain.setValueAtTime(0.04, now);
+                    gain.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+                    osc.connect(gain);
+                    gain.connect(audioCtx.destination);
+                    osc.start(now);
+                    osc.stop(now + 0.1);
+                }
+            } catch (e) {}
+        }
+        // ============================================================================
+        // 3. CURATED BLUEPRINTS (CRISP, VISUAL, EASY TO GRASP IN 3 SECONDS)
+        // ============================================================================
+        const BLUEPRINTS = {
+            fintech: {
+                title: "Instant Cross-Border Payout App",
+                tag: "PROJECT DOCUMENT",
+                baseClarity: 52,
+                rawText: `We are migrating our nightly batch settlement engine to a real-time payment architecture handling 18,000 transfers per second across 14 currencies. When a user sends money, the Gateway locks the FX rate, debits the sender wallet, and retries failed HTTP calls up to 5 times immediately. On Sunday at 02:00 UTC, we will flip DNS to cut over from Oracle to CockroachDB. User KYC verification status is cached for 30 days so checkout stays under 40ms.`,
+                discoveries: [
+                    {
+                        id: "fin-1",
+                        category: "UNASKED_QUESTION",
+                        impactScore: 98,
+                        severityLabel: "98% Critical Impact",
+                        question: "What stops a user from being charged 5 times if a retry fires after the money leaves their wallet?",
+                        evidence: "retries failed HTTP calls up to 5 times immediately",
+                        whyItMatters: "Immediate retries without a unique Idempotency Key double-debit customers during brief network hiccups and multiply a 18k TPS spike into a 90k TPS self-inflicted outage.",
+                        recommendation: "Attach a unique client-generated Idempotency-Key to every transfer and space out retries with exponential backoff.",
+                        healedClause: "SAFEGUARD 01 [IDEMPOTENT RETRIES]: Every transfer requires a mandatory UUIDv7 Idempotency-Key lock and exponential backoff with jitter to prevent duplicate debits.",
+                        domino: [
+                            "Network lags for 300ms after wallet debit",
+                            "Gateway fires 5 instant retries in parallel",
+                            "$1.8M in duplicate customer charges & system crash"
+                        ],
+                        healed: false,
+                        showDomino: false
+                    },
+                    {
+                        id: "fin-2",
+                        category: "OVERLOOKED_CONSTRAINT",
+                        impactScore: 94,
+                        severityLabel: "94% Critical Impact",
+                        question: "If a user is placed on a fraud watchlist today, will your 30-day cache let them keep sending money for a month?",
+                        evidence: "User KYC verification status is cached for 30 days so checkout stays under 40ms.",
+                        whyItMatters: "Financial compliance mandates instant account freezing when fraud or sanctions alerts trigger. A passive 30-day cache blinds your gateway to revoked accounts.",
+                        recommendation: "Keep the fast cache, but push an instant webhook purge event whenever a user's KYC or fraud status changes.",
+                        healedClause: "SAFEGUARD 02 [INSTANT KYC PURGE]: The 30-day KYC cache subscribes to real-time fraud revocation webhooks to evict flagged accounts in under 200ms.",
+                        domino: [
+                            "Compromised account flagged on Day 2",
+                            "Cache keeps serving 'KYC Approved' for 28 days",
+                            "Regulatory audit fine & illicit fund outflow"
+                        ],
+                        healed: false,
+                        showDomino: false
+                    },
+                    {
+                        id: "fin-3",
+                        category: "MISSING_ASSUMPTION",
+                        impactScore: 89,
+                        severityLabel: "89% High Impact",
+                        question: "You assume flipping DNS switches every server at the exact same second—what happens when half still write to the old database?",
+                        evidence: "On Sunday at 02:00 UTC, we will flip DNS to cut over from Oracle to CockroachDB.",
+                        whyItMatters: "ISPs and servers cache DNS records unpredictably. For several minutes, transfers will split across both databases, corrupting account balances.",
+                        recommendation: "Use an application feature-flag router and lock the old database to read-only before switching writes.",
+                        healedClause: "SAFEGUARD 03 [FENCED DB CUTOVER]: Cutover is executed via an atomic proxy switch after placing the legacy Oracle database into strict Read-Only mode.",
+                        domino: [
+                            "DNS flipped at 02:00 UTC; 30% of servers cache old IP",
+                            "Transfers write to both databases simultaneously",
+                            "Split-brain ledger balances require 12h emergency freeze"
+                        ],
+                        healed: false,
+                        showDomino: false
+                    },
+                    {
+                        id: "fin-4",
+                        category: "UNASKED_QUESTION",
+                        impactScore: 84,
+                        severityLabel: "84% High Impact",
+                        question: "Who absorbs the currency loss if exchange rates swing wildly while transfers sit in a queue?",
+                        evidence: "When a user sends money, the Gateway locks the FX rate, debits the sender wallet",
+                        whyItMatters: "Without an expiration timer on locked FX quotes, currency traders can exploit delayed settlements during market spikes.",
+                        recommendation: "Bind every quote to a signed 45-second expiration token.",
+                        healedClause: "SAFEGUARD 04 [TIMED FX QUOTES]: Locked exchange rates expire strictly after 45 seconds to eliminate currency arbitrage risk.",
+                        domino: [
+                            "Currency market swings 2% during queue delay",
+                            "Old locked FX rate executes minutes later",
+                            "Unhedged treasury loss on every delayed payout"
+                        ],
+                        healed: false,
+                        showDomino: false
+                    }
+                ]
+            },
+            healthcare: {
+                title: "Clinical AI Sepsis Triage Dataset",
+                tag: "DATASET SCHEMA",
+                baseClarity: 46,
+                rawText: `Our training dataset contains 420,000 hospital records from 3 metropolitan trauma centers. Input features include heart rate, blood pressure, and timestamp of IV antibiotics given. Missing serum lactate lab values are automatically filled with the healthy population average (1.4 mmol/L). Rows are randomly shuffled and split 80/20 for training and validation (0.96 accuracy) before deploying to rural clinics.`,
+                discoveries: [
+                    {
+                        id: "med-1",
+                        category: "OVERLOOKED_CONSTRAINT",
+                        impactScore: 99,
+                        severityLabel: "99% Critical Impact",
+                        question: "Is the AI actually predicting sepsis—or just cheating by seeing that a doctor already ordered IV antibiotics?",
+                        evidence: "Input features include heart rate, blood pressure, and timestamp of IV antibiotics given.",
+                        whyItMatters: "Doctors order IV antibiotics because they already suspect sepsis. Including treatment timestamps causes 'Target Leakage'—the AI waits for the doctor to act instead of warning nurses early.",
+                        recommendation: "Remove all physician treatment orders (antibiotics, vasopressors) from the training input features.",
+                        healedClause: "SAFEGUARD 01 [ZERO TARGET LEAKAGE]: All clinician treatment timestamps (IV antibiotics) are stripped from training inputs so the model predicts physiological onset independently.",
+                        domino: [
+                            "AI trained on antibiotic order timestamps",
+                            "Achieves 0.96 accuracy by echoing doctors",
+                            "Fails to alert on unmonitored patients in real clinics"
+                        ],
+                        healed: false,
+                        showDomino: false
+                    },
+                    {
+                        id: "med-2",
+                        category: "MISSING_ASSUMPTION",
+                        impactScore: 93,
+                        severityLabel: "93% Critical Impact",
+                        question: "When you randomly shuffle 420,000 rows, aren't multiple hours from the same patient leaking into both Train and Test sets?",
+                        evidence: "Rows are randomly shuffled and split 80/20 for training and validation",
+                        whyItMatters: "Splitting by row puts Hour 1 of Patient A in Training and Hour 2 of Patient A in Testing. The AI memorizes individual patients rather than learning general sepsis patterns.",
+                        recommendation: "Split the 80/20 dataset strictly grouped by Patient ID so no patient appears in both sets.",
+                        healedClause: "SAFEGUARD 02 [PATIENT-GROUPED SPLIT]: Train and validation partitions are strictly grouped by Patient_UUID to prevent identity memorization.",
+                        domino: [
+                            "Same patient's hourly vitals sit in Train & Test",
+                            "Lab benchmark shows inflated 0.96 score",
+                            "Accuracy collapses when deployed to new patients"
+                        ],
+                        healed: false,
+                        showDomino: false
+                    },
+                    {
+                        id: "med-3",
+                        category: "UNASKED_QUESTION",
+                        impactScore: 88,
+                        severityLabel: "88% High Impact",
+                        question: "What happens in rural clinics that don't have rapid lactate lab machines if the AI fills every missing lab as 'healthy 1.4'?",
+                        evidence: "Missing serum lactate lab values are automatically filled with the healthy population average (1.4 mmol/L).",
+                        whyItMatters: "Rural clinics rarely run rapid lactate tests. Auto-filling 'healthy 1.4' tricks the AI into downgrading critically ill rural patients.",
+                        recommendation: "Pass an explicit 'Lab-Not-Measured' indicator flag instead of assuming a healthy average.",
+                        healedClause: "SAFEGUARD 03 [MISSING-DATA HONESTY]: Mean imputation is replaced with explicit 'Lab-Unavailable' masks calibrated for rural clinics.",
+                        domino: [
+                            "Rural clinic submits vitals without lactate lab",
+                            "Pipeline injects healthy 1.4 mmol/L average",
+                            "Critical septic shock patient marked Low Risk"
+                        ],
+                        healed: false,
+                        showDomino: false
+                    }
+                ]
+            },
+            drone: {
+                title: "Autonomous Drone Blood Delivery",
+                tag: "OPERATIONAL WORKFLOW",
+                baseClarity: 50,
+                rawText: `When a rural hospital orders emergency blood units, our warehouse dispatches an autonomous quadcopter with a -20°C active cooler box. The drone flies up to 28km at 120m altitude, landing with an 8% battery reserve while streaming temperature logs over 5G every 5 seconds. At the hospital GPS coordinate, it descends to 1.5m and automatically releases the magnetic winch.`,
+                discoveries: [
+                    {
+                        id: "drn-1",
+                        category: "OVERLOOKED_CONSTRAINT",
+                        impactScore: 97,
+                        severityLabel: "97% Critical Impact",
+                        question: "Will an 8% battery reserve survive a 25 km/h headwind while the -20°C cooler box drains extra power on a hot afternoon?",
+                        evidence: "flies up to 28km at 120m altitude, landing with an 8% battery reserve",
+                        whyItMatters: "Headwinds and active refrigeration on summer days increase battery draw by 25%+, guaranteeing mid-air battery exhaustion before reaching the hospital.",
+                        recommendation: "Calculate real-time wind + thermal power draw before takeoff and require a minimum 25% battery reserve.",
+                        healedClause: "SAFEGUARD 01 [WIND & THERMAL RESERVE]: Pre-flight dispatch enforces a 25% minimum battery reserve adjusted for live headwind and cooler thermal load.",
+                        domino: [
+                            "36°C heatwave + 25km/h headwind on 28km flight",
+                            "Cooler & rotors drain battery 4km short of hospital",
+                            "Forced emergency landing & lost blood shipment"
+                        ],
+                        healed: false,
+                        showDomino: false
+                    },
+                    {
+                        id: "drn-2",
+                        category: "UNASKED_QUESTION",
+                        impactScore: 92,
+                        severityLabel: "92% Critical Impact",
+                        question: "What stops the drone from dropping the cooler box onto a parked ambulance or bystander at the GPS spot?",
+                        evidence: "At the hospital GPS coordinate, it descends to 1.5m and automatically releases the magnetic winch.",
+                        whyItMatters: "Blindly releasing a heavy payload at static GPS coordinates without visual clearance or staff confirmation creates a severe safety and spoilage hazard.",
+                        recommendation: "Require downward camera obstacle clearance AND a digital tap confirmation from hospital staff before winch release.",
+                        healedClause: "SAFEGUARD 02 [VERIFIED DROP HANDSHAKE]: Winch release requires onboard vision landing clearance plus cryptographic beacon confirmation from receiving staff.",
+                        domino: [
+                            "Ambulance parks on hospital GPS landing zone",
+                            "Drone descends blindly to 1.5m and drops box",
+                            "Damaged medical payload & bystander hazard"
+                        ],
+                        healed: false,
+                        showDomino: false
+                    },
+                    {
+                        id: "drn-3",
+                        category: "MISSING_ASSUMPTION",
+                        impactScore: 85,
+                        severityLabel: "85% High Impact",
+                        question: "You assume unbroken 5G at 120m in the sky—what happens to mandatory FDA temperature logs in rural dead zones?",
+                        evidence: "streaming temperature logs over 5G every 5 seconds",
+                        whyItMatters: "Cell towers point downward toward ground phones. Flying through rural 5G dead zones drops temperature packets, forcing pharmacists to discard unverified blood units.",
+                        recommendation: "Store signed temperature readings on an onboard memory chip and sync the full log upon landing.",
+                        healedClause: "SAFEGUARD 03 [OFFLINE BLACKBOX LOG]: Temperature readings are buffered to tamper-proof onboard memory so 5G dead zones never break cold-chain proof.",
+                        domino: [
+                            "Drone crosses 6km rural cellular dead zone",
+                            "10 minutes of live temperature telemetry lost",
+                            "Hospital forced to quarantine & discard blood bag"
+                        ],
+                        healed: false,
+                        showDomino: false
+                    }
+                ]
+            }
+        };
+        // ============================================================================
+        // 4. STEP-BY-STEP STATE & NAVIGATION
+        // ============================================================================
+        let currentStep = 1;
+        let currentUser = "Aarav — Lead Architect";
+        let currentPersona = "PRODUCT";
+        let activeBlueprintKey = "fintech";
+        let activeData = JSON.parse(JSON.stringify(BLUEPRINTS.fintech));
+        let activeCategory = "ALL";
+        let selectedCardId = activeData.discoveries[0].id;
+        function showWarmToast(msg) {
+            const box = document.getElementById('toastBox');
+            const el = document.createElement('div');
+            el.className = "warm-glass px-4 py-3 rounded-2xl shadow-warm-card border border-amber-500/40 text-xs font-semibold text-espresso flex items-center gap-2 transition-all duration-300";
+            el.innerHTML = `<i data-lucide="sparkles" class="w-4 h-4 text-amber-600 shrink-0"></i><span>${msg}</span>`;
+            box.appendChild(el);
+            lucide.createIcons();
+            setTimeout(() => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(8px)';
+                setTimeout(() => el.remove(), 300);
+            }, 3000);
+        }
+        function goToStep(stepNum) {
+            playAcousticChime('tap');
+            currentStep = stepNum;
+            // Update sections
+            document.querySelectorAll('.step-section').forEach(sec => {
+                sec.classList.remove('active-step');
+            });
+            const target = document.getElementById(`step-${stepNum}`);
+            if (target) target.classList.add('active-step');
+            // Update top nav pills
+            for (let i = 1; i <= 5; i++) {
+                const btn = document.getElementById(`nav-step-${i}`);
+                if (!btn) continue;
+                if (i === stepNum) {
+                    btn.className = "step-dot px-3 py-1 rounded-full text-xs font-semibold transition-all bg-espresso text-alabaster shadow-sm";
+                } else if (i < stepNum) {
+                    btn.className = "step-dot px-2.5 py-1 rounded-full text-xs font-medium text-amber-800 bg-amber-100/70 hover:bg-amber-200/70 transition-all";
+                } else {
+                    btn.className = "step-dot px-2.5 py-1 rounded-full text-xs font-medium text-stonewarm hover:text-espresso transition-all";
+                }
+            }
+            if (stepNum === 3) {
+                if (!document.getElementById('blueprintInputArea').value.trim()) {
+                    document.getElementById('blueprintInputArea').value = activeData.rawText;
+                }
+            }
+            if (stepNum === 4) {
+                renderStep4Deck();
+            }
+            if (stepNum === 5) {
+                renderStep5Blueprint();
+            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            lucide.createIcons();
+        }
+        function quickJumpDemo() {
+            triggerGoldenStrikeFlash();
+            currentUser = "Guest Architect";
+            document.getElementById('headerUserName').textContent = currentUser;
+            document.getElementById('userHeaderBadge').classList.remove('hidden');
+            goToStep(4);
+            showWarmToast("Loaded Instant Interactive Demo — Tap any blindspot!");
+        }
+        // ============================================================================
+        // STEP 2 HANDLERS (LOGIN & PERSONA)
+        // ============================================================================
+        function selectPersona(personaKey, btnEl) {
+            playAcousticChime('tap');
+            currentPersona = personaKey;
+            document.querySelectorAll('.persona-card').forEach(c => {
+                c.className = "persona-card text-left p-3.5 rounded-2xl border border-stone-200 bg-alabaster/70 hover:border-amber-400 transition-all";
+                c.querySelector('div').className = "w-8 h-8 rounded-xl bg-stone-200 text-espresso flex items-center justify-center mb-2";
+            });
+            btnEl.className = "persona-card text-left p-3.5 rounded-2xl border-2 border-amber-500 bg-amber-50/70 transition-all";
+            btnEl.querySelector('div').className = "w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center mb-2";
+        }
+        function skipLoginAsGuest() {
+            document.getElementById('userNameInput').value = "Guest Architect";
+            completeLogin();
+        }
+        function completeLogin() {
+            const rawName = document.getElementById('userNameInput').value.trim() || "Guest Architect";
+            currentUser = rawName;
+            const firstName = rawName.split(' ')[0].replace(/[^a-zA-Z]/g, '') || "Architect";
+            document.getElementById('headerUserName').textContent = firstName;
+            document.getElementById('welcomeUserSpan').textContent = firstName;
+            document.getElementById('userHeaderBadge').classList.remove('hidden');
+            triggerGoldenStrikeFlash();
+            goToStep(3);
+        }
+        // ============================================================================
+        // STEP 3 HANDLERS (BLUEPRINT SELECTION & INPUT)
+        // ============================================================================
+        function chooseBlueprint(key) {
+            playAcousticChime('tap');
+            activeBlueprintKey = key;
+            activeData = JSON.parse(JSON.stringify(BLUEPRINTS[key]));
+            selectedCardId = activeData.discoveries[0].id;
+            document.querySelectorAll('.bp-card').forEach(card => {
+                card.className = "bp-card warm-glass-card rounded-3xl p-5 cursor-pointer border border-stone-200/80 relative";
+                const badge = card.querySelector('.check-badge');
+                if (badge) {
+                    badge.className = "w-6 h-6 rounded-full bg-stone-200 text-stone-500 flex items-center justify-center text-xs check-badge";
+                    badge.textContent = "+";
+                }
+            });
+            const chosen = document.getElementById(`bp-${key}`);
+            if (chosen) {
+                chosen.className = "bp-card warm-glass-card rounded-3xl p-5 cursor-pointer border-2 border-amber-500 shadow-warm-hover relative";
+                const badge = chosen.querySelector('.check-badge');
+                if (badge) {
+                    badge.className = "w-6 h-6 rounded-full bg-amber-500 text-white flex items-center justify-center text-xs check-badge";
+                    badge.textContent = "✓";
+                }
+            }
+            document.getElementById('blueprintInputArea').value = activeData.rawText;
+        }
+        function uploadCustomFile(e) {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = function(evt) {
+                document.getElementById('blueprintInputArea').value = evt.target.result;
+                showWarmToast(`Loaded "${file.name}" — ready to strike!`);
+            };
+            reader.readAsText(file);
+        }
+        // ============================================================================
+        // STEP 4 HANDLERS (THE LIGHTNING REVEAL & INTERACTIVE FOCUS DECK)
+        // ============================================================================
+        const apiKey = "";
+        async function runLightningStrikeScan() {
+            const inputVal = document.getElementById('blueprintInputArea').value.trim();
+            if (!inputVal) {
+                showWarmToast("Please pick a sample card or type a sentence first!");
+                return;
+            }
+            triggerGoldenStrikeFlash();
+            goToStep(4);
+            const overlay = document.getElementById('scanningOverlay');
+            const workspace = document.getElementById('deckWorkspace');
+            const headline = document.getElementById('scanStatusHeadline');
+            overlay.classList.remove('hidden');
+            overlay.classList.add('flex');
+            workspace.classList.add('hidden');
+            headline.textContent = "Tracing hidden assumptions...";
+            setTimeout(() => { headline.textContent = "Simulating failure dominoes..."; }, 550);
+            // Check if matches preset for instant high-speed demo
+            const matchedKey = Object.keys(BLUEPRINTS).find(k => BLUEPRINTS[k].rawText.trim() === inputVal);
+            if (matchedKey) {
+                activeData = JSON.parse(JSON.stringify(BLUEPRINTS[matchedKey]));
+                selectedCardId = activeData.discoveries[0].id;
+                setTimeout(() => {
+                    overlay.classList.add('hidden');
+                    overlay.classList.remove('flex');
+                    workspace.classList.remove('hidden');
+                    renderStep4Deck();
+                }, 1150);
+                return;
+            }
+            // Custom input -> Call Gemini API (with instant fallback)
+            try {
+                const payload = {
+                    contents: [{
+                        role: "user",
+                        parts: [{
+                            text: `Analyze this project document, dataset, or workflow and extract 4 high-impact blindspots (UNASKED_QUESTION, MISSING_ASSUMPTION, OVERLOOKED_CONSTRAINT). Keep questions punchy (1 sentence) and crystal clear.\n\nText:\n${inputVal}`
+                        }]
+                    }],
+                    generationConfig: {
+                        responseMimeType: "application/json",
+                        responseSchema: {
+                            type: "OBJECT",
+                            properties: {
+                                title: { type: "STRING" },
+                                discoveries: {
+                                    type: "ARRAY",
+                                    items: {
+                                        type: "OBJECT",
+                                        properties: {
+                                            category: { type: "STRING", enum: ["UNASKED_QUESTION", "MISSING_ASSUMPTION", "OVERLOOKED_CONSTRAINT"] },
+                                            impactScore: { type: "INTEGER" },
+                                            question: { type: "STRING" },
+                                            evidence: { type: "STRING" },
+                                            whyItMatters: { type: "STRING" },
+                                            recommendation: { type: "STRING" },
+                                            healedClause: { type: "STRING" },
+                                            domino: { type: "ARRAY", items: { type: "STRING" } }
+                                        },
+                                        required: ["category", "impactScore", "question", "evidence", "whyItMatters", "recommendation", "healedClause", "domino"]
+                                    }
+                                }
+                            },
+                            required: ["title", "discoveries"]
+                        }
+                    }
+                };
+                const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                const parsed = JSON.parse(data.candidates[0].content.parts[0].text);
+                activeData = {
+                    title: parsed.title || "Custom Blueprint Analysis",
+                    tag: "CUSTOM SPEC",
+                    baseClarity: 50,
+                    rawText: inputVal,
+                    discoveries: parsed.discoveries.map((d, i) => ({
+                        id: `cust-${i + 1}`,
+                        category: d.category,
+                        impactScore: d.impactScore || 92,
+                        severityLabel: `${d.impactScore || 92}% Critical Impact`,
+                        question: d.question,
+                        evidence: d.evidence,
+                        whyItMatters: d.whyItMatters,
+                        recommendation: d.recommendation,
+                        healedClause: d.healedClause,
+                        domino: (d.domino && d.domino.length >= 3) ? d.domino.slice(0, 3) : ["Trigger event occurs", "Hidden assumption fails", "Severe operational impact"],
+                        healed: false,
+                        showDomino: false
+                    }))
+                };
+            } catch (e) {
+                // Instant fallback if offline
+                activeData = {
+                    title: "Custom Blueprint Specification",
+                    tag: "CUSTOM SPEC",
+                    baseClarity: 52,
+                    rawText: inputVal,
+                    discoveries: [
+                        {
+                            id: "cust-1",
+                            category: "UNASKED_QUESTION",
+                            impactScore: 95,
+                            severityLabel: "95% Critical Impact",
+                            question: "What happens if your primary external dependency experiences a 10-second timeout during peak load?",
+                            evidence: inputVal.slice(0, 75),
+                            whyItMatters: "The blueprint defines the ideal flow but omits fallback degradation, retry queues, and timeout limits.",
+                            recommendation: "Enforce a strict 1.5-second circuit breaker with an asynchronous fallback queue.",
+                            healedClause: "SAFEGUARD 01 [CIRCUIT BREAKER]: All external calls enforce a 1.5s timeout and fail gracefully to an asynchronous queue.",
+                            domino: ["External API slows down", "Worker threads block waiting", "Full cascading service outage"],
+                            healed: false,
+                            showDomino: false
+                        }
+                    ]
+                };
+            } finally {
+                selectedCardId = activeData.discoveries[0].id;
+                overlay.classList.add('hidden');
+                overlay.classList.remove('flex');
+                workspace.classList.remove('hidden');
+                renderStep4Deck();
+            }
+        }
+        function filterDeck(cat) {
+            playAcousticChime('tap');
+            activeCategory = cat;
+            document.querySelectorAll('.deck-filter-btn').forEach(btn => {
+                btn.className = "deck-filter-btn px-3.5 py-1.5 rounded-full text-xs font-medium text-stonewarm hover:text-espresso transition-all";
+            });
+            const activeBtn = document.getElementById(`filter-${cat}`);
+            if (activeBtn) {
+                activeBtn.className = "deck-filter-btn px-3.5 py-1.5 rounded-full text-xs font-semibold bg-espresso text-alabaster transition-all";
+            }
+            const filtered = getFilteredDiscoveries();
+            if (filtered.length > 0 && !filtered.some(d => d.id === selectedCardId)) {
+                selectedCardId = filtered[0].id;
+            }
+            renderStep4Deck();
+        }
+        function getFilteredDiscoveries() {
+            const list = activeData.discoveries.filter(d => activeCategory === 'ALL' || d.category === activeCategory);
+            return list.sort((a, b) => b.impactScore - a.impactScore);
+        }
+        function selectSpotlightCard(id) {
+            playAcousticChime('tap');
+            selectedCardId = id;
+            renderStep4Deck();
+        }
+        function toggleDominoChain(id) {
+            playAcousticChime('tap');
+            const item = activeData.discoveries.find(d => d.id === id);
+            if (item) {
+                item.showDomino = !item.showDomino;
+                renderStep4Deck();
+            }
+        }
+        function toggleHealCard(id) {
+            const item = activeData.discoveries.find(d => d.id === id);
+            if (!item) return;
+            item.healed = !item.healed;
+            if (item.healed) {
+                playAcousticChime('heal');
+                showWarmToast("Blindspot Healed! Safeguard woven into your blueprint.");
+            } else {
+                playAcousticChime('tap');
+            }
+            renderStep4Deck();
+        }
+        function healAllCards() {
+            playAcousticChime('heal');
+            triggerGoldenStrikeFlash();
+            activeData.discoveries.forEach(d => d.healed = true);
+            renderStep4Deck();
+            showWarmToast("All Blindspots Healed! Blueprint Immunity at 99%.");
+        }
+        function renderStep4Deck() {
+            const total = activeData.discoveries.length;
+            const healedCount = activeData.discoveries.filter(d => d.healed).length;
+            document.getElementById('count-ALL').textContent = total;
+            document.getElementById('healedCounterText').textContent = `${healedCount} of ${total} Blindspots Healed`;
+            // Update Clarity Ring
+            const clarityScore = healedCount === total ? 99 : Math.min(98, activeData.baseClarity + Math.round((healedCount / Math.max(1, total)) * (98 - activeData.baseClarity)));
+            document.getElementById('clarityPercentText').textContent = `${clarityScore}%`;
+            const ringPath = document.getElementById('clarityRingPath');
+            ringPath.setAttribute('stroke-dasharray', `${clarityScore}, 100`);
+            ringPath.className = clarityScore >= 85 ? "text-emerald-600 transition-all duration-700" : "text-amber-500 transition-all duration-700";
+            const filtered = getFilteredDiscoveries();
+            const miniList = document.getElementById('miniCardList');
+            const spotlight = document.getElementById('spotlightCardContainer');
+            // Render Left Mini Rail
+            miniList.innerHTML = filtered.map((d, idx) => {
+                const isSelected = d.id === selectedCardId;
+                const catIcon = d.category === 'UNASKED_QUESTION' ? '❓' : (d.category === 'MISSING_ASSUMPTION' ? '👁️' : '🔒');
+                return `
+                    <div onclick="selectSpotlightCard('${d.id}')" class="p-4 rounded-2xl cursor-pointer transition-all flex items-start justify-between gap-3 ${isSelected ? 'bg-espresso text-alabaster shadow-md scale-[1.01]' : 'warm-glass hover:bg-white text-espresso'}">
+                        <div class="flex items-start gap-2.5">
+                            <span class="text-sm mt-0.5">${catIcon}</span>
+                            <div>
+                                <div class="flex items-center gap-2 mb-0.5">
+                                    <span class="text-[10px] font-mono uppercase tracking-wider ${isSelected ? 'text-amber-400' : 'text-amber-700'} font-bold">${d.impactScore}% Impact</span>
+                                    ${d.healed ? `<span class="text-[10px] font-mono px-1.5 py-0.2 rounded-full bg-emerald-500/20 text-emerald-400 font-semibold">✓ Healed</span>` : ''}
+                                </div>
+                                <p class="text-xs font-semibold line-clamp-2 leading-snug">${d.question}</p>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            // Render Right Spotlight Card
+            const activeCard = filtered.find(d => d.id === selectedCardId) || filtered[0];
+            if (!activeCard) return;
+            const catLabelMap = {
+                'UNASKED_QUESTION': { text: '❓ Unasked Question', badge: 'bg-amber-100 text-amber-900 border-amber-300' },
+                'MISSING_ASSUMPTION': { text: '👁️ Missing Assumption', badge: 'bg-orange-100 text-orange-900 border-orange-300' },
+                'OVERLOOKED_CONSTRAINT': { text: '🔒 Overlooked Constraint', badge: 'bg-rose-100 text-rose-900 border-rose-300' }
+            };
+            const catMeta = catLabelMap[activeCard.category] || catLabelMap.UNASKED_QUESTION;
+            spotlight.innerHTML = `
+                <div>
+                    <!-- Top Pill Bar -->
+                    <div class="flex flex-wrap items-center justify-between gap-2 mb-5">
+                        <div class="flex items-center gap-2">
+                            <span class="px-3 py-1 rounded-full text-xs font-semibold border ${catMeta.badge}">${catMeta.text}</span>
+                            <span class="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-espresso text-amber-400">⚡ ${activeCard.severityLabel}</span>
+                        </div>
+                        ${activeCard.healed ? `<span class="px-3 py-1 rounded-full text-xs font-mono font-bold bg-emerald-100 text-emerald-800 border border-emerald-300 flex items-center gap-1"><i data-lucide="check-circle-2" class="w-3.5 h-3.5"></i> Safeguard Active</span>` : ''}
+                    </div>
+                    <!-- Big Editorial Unasked Question -->
+                    <h3 class="font-serif text-3xl sm:text-4xl text-espresso leading-tight mb-5">
+                        "${activeCard.question}"
+                    </h3>
+                    <!-- Triggering Quote Highlighted Like Golden Marker Pen -->
+                    <div class="mb-5">
+                        <span class="text-[10px] font-mono uppercase tracking-widest text-stonewarm block mb-1.5">Triggered By Your Blueprint Line:</span>
+                        <p class="text-xs sm:text-sm italic text-espresso">
+                            "...<span class="golden-highlight">${activeCard.evidence}</span>..."
+                        </p>
+                    </div>
+                    <!-- Crisp 2-Line Explanation & Recommendation -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+                        <div class="p-4 rounded-2xl bg-alabaster border border-stone-200/80">
+                            <div class="text-[10px] font-mono uppercase tracking-wider text-orange-800 font-bold mb-1">Why This Matters</div>
+                            <p class="text-xs text-stonewarm leading-relaxed">${activeCard.whyItMatters}</p>
+                        </div>
+                        <div class="p-4 rounded-2xl bg-amber-50/70 border border-amber-200">
+                            <div class="text-[10px] font-mono uppercase tracking-wider text-amber-900 font-bold mb-1">Evidence-Based Fix</div>
+                            <p class="text-xs text-espresso font-medium leading-relaxed">${activeCard.recommendation}</p>
+                        </div>
+                    </div>
+                    <!-- Interactive Domino Effect Drawer -->
+                    ${activeCard.showDomino ? `
+                        <div class="mb-6 p-4 rounded-2xl bg-orange-50/60 border border-orange-200/80 transition-all">
+                            <div class="text-[10px] font-mono uppercase tracking-widest text-orange-800 font-bold mb-2.5 flex items-center gap-1.5">
+                                <i data-lucide="flame" class="w-3.5 h-3.5 text-orange-600"></i>
+                                Domino Chain Reaction If Ignored:
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                                ${activeCard.domino.map((stepText, idx) => `
+                                    <div class="p-3 rounded-xl bg-white border border-orange-200 shadow-sm">
+                                        <span class="text-[10px] font-mono font-bold text-amber-700 block mb-0.5">0${idx + 1}. ${idx === 0 ? 'Trigger' : (idx === 1 ? 'Domino' : 'Impact')}</span>
+                                        <p class="text-xs font-medium text-espresso leading-snug">${stepText}</p>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    ` : ''}
+                </div>
+                <!-- Bottom Tactile Action Bar -->
+                <div class="pt-4 border-t border-stone-200/80 flex flex-wrap items-center justify-between gap-3">
+                    <button onclick="toggleDominoChain('${activeCard.id}')" class="px-4 py-2.5 rounded-full bg-ivory hover:bg-amber-100/70 text-xs font-semibold text-espresso border border-stone-300 transition-all flex items-center gap-2">
+                        <i data-lucide="git-commit" class="w-4 h-4 text-amber-600"></i>
+                        <span>${activeCard.showDomino ? 'Hide Domino Effect' : 'Tap to See Domino Effect ⚡'}</span>
+                    </button>
+                    <button onclick="toggleHealCard('${activeCard.id}')" class="px-6 py-3 rounded-full text-xs font-semibold transition-all flex items-center gap-2 shadow-md ${activeCard.healed ? 'bg-emerald-600 text-white hover:bg-emerald-700' : 'btn-liquid-gold'}">
+                        <i data-lucide="${activeCard.healed ? 'check' : 'sparkles'}" class="w-4 h-4 ${activeCard.healed ? 'text-white' : 'text-amber-400'}"></i>
+                        <span>${activeCard.healed ? 'Blindspot Healed (Undo)' : 'Heal This Blindspot ✨'}</span>
+                    </button>
+                </div>
+            `;
+            lucide.createIcons();
+        }
+        // ============================================================================
+        // STEP 5 HANDLERS (LIVING BLUEPRINT & "WHAT-IF" SPARK SIMULATOR)
+        // ============================================================================
+        function renderStep5Blueprint() {
+            document.getElementById('finalDocTitle').textContent = activeData.title;
+            const viewer = document.getElementById('upgradedSpecViewer');
+            const healedItems = activeData.discoveries.filter(d => d.healed);
+            let html = `<div class="font-serif text-lg text-stonewarm italic mb-2">Original Specification</div>`;
+            html += `<p class="text-sm text-espresso leading-relaxed mb-5">${activeData.rawText}</p>`;
+            html += `<div class="border-t border-stone-300 pt-4 mt-4">`;
+            html += `<div class="text-xs font-mono uppercase tracking-widest text-emerald-800 font-bold mb-3 flex items-center gap-1.5"><i data-lucide="shield-check" class="w-4 h-4 text-emerald-600"></i> Aura Auto-Injected Safeguards (${healedItems.length} Active)</div>`;
+            if (healedItems.length === 0) {
+                html += `
+                    <div class="p-4 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-between gap-4">
+                        <p class="text-xs text-amber-900">You haven't clicked <strong>"Heal This Blindspot"</strong> on any cards yet. Heal all blindspots with one click to fortify your specification!</p>
+                        <button onclick="healAllCards(); renderStep5Blueprint();" class="px-4 py-2 rounded-full bg-amber-500 text-espresso font-bold text-xs shrink-0">Heal All Now ✨</button>
+                    </div>
+                `;
+            } else {
+                html += `<div class="space-y-2.5">`;
+                healedItems.forEach(item => {
+                    html += `
+                        <div class="p-3.5 rounded-2xl bg-emerald-50/90 border-l-4 border-emerald-600 text-xs text-espresso shadow-sm">
+                            <div class="font-mono font-bold text-emerald-900 mb-0.5">✓ ${item.healedClause}</div>
+                            <div class="text-[11px] text-stonewarm">Resolves: "${item.question}"</div>
+                        </div>
+                    `;
+                });
+                html += `</div>`;
+            }
+            html += `</div>`;
+            viewer.innerHTML = html;
+            lucide.createIcons();
+        }
+        function triggerQuickWhatIf(promptText) {
+            document.getElementById('whatIfInput').value = promptText;
+            runWhatIfSpark();
+        }
+        async function runWhatIfSpark() {
+            const input = document.getElementById('whatIfInput');
+            const query = input.value.trim();
+            if (!query) {
+                showWarmToast("Type or click a 'What-If' scenario first!");
+                return;
+            }
+            const btn = document.getElementById('whatIfBtn');
+            btn.disabled = true;
+            btn.innerHTML = `<span>Sparking...</span>`;
+            triggerGoldenStrikeFlash();
+            try {
+                const payload = {
+                    contents: [{
+                        role: "user",
+                        parts: [{
+                            text: `Specification:\n${activeData.rawText}\n\nWhat-If Scenario: "${query}"\nGenerate 1 sharp Unasked Question discovery card and safeguard clause for this scenario.`
+                        }]
+                    }],
+                    generationConfig: {
+                        responseMimeType: "application/json",
+                        responseSchema: {
+                            type: "OBJECT",
+                            properties: {
+                                question: { type: "STRING" },
+                                whyItMatters: { type: "STRING" },
+                                recommendation: { type: "STRING" },
+                                healedClause: { type: "STRING" },
+                                domino: { type: "ARRAY", items: { type: "STRING" } }
+                            },
+                            required: ["question", "whyItMatters", "recommendation", "healedClause", "domino"]
+                        }
+                    }
+                };
+                const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent?key=${apiKey}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+                const data = await res.json();
+                const parsed = JSON.parse(data.candidates[0].content.parts[0].text);
+                const newId = `spark-${Date.now().toString().slice(-3)}`;
+                activeData.discoveries.unshift({
+                    id: newId,
+                    category: "UNASKED_QUESTION",
+                    impactScore: 96,
+                    severityLabel: "96% Stress-Test Spark",
+                    question: parsed.question,
+                    evidence: query,
+                    whyItMatters: parsed.whyItMatters,
+                    recommendation: parsed.recommendation,
+                    healedClause: parsed.healedClause,
+                    domino: parsed.domino?.slice(0, 3) || [query, "System lacks automated fallback", "Critical SLA breach"],
+                    healed: true,
+                    showDomino: true
+                });
+            } catch (e) {
+                const newId = `spark-${Date.now().toString().slice(-3)}`;
+                activeData.discoveries.unshift({
+                    id: newId,
+                    category: "UNASKED_QUESTION",
+                    impactScore: 96,
+                    severityLabel: "96% Stress-Test Spark",
+                    question: `How does the architecture stay resilient under: "${query}"?`,
+                    evidence: query,
+                    whyItMatters: "Stress-testing reveals that this edge case has no explicit automated fallback or rate-limiting guardrail.",
+                    recommendation: "Add an automated circuit-breaker and immutable audit log specifically for this scenario.",
+                    healedClause: `SAFEGUARD SPARK [${query.toUpperCase().slice(0, 26)}...]: System enforces automated rate-limiting, zero-trust audit logs, and graceful failover under this condition.`,
+                    domino: [query, "Guardrail missing in original spec", "Operational disruption prevented by new safeguard"],
+                    healed: true,
+                    showDomino: true
+                });
+            } finally {
+                input.value = '';
+                btn.disabled = false;
+                btn.innerHTML = `<span>Spark Scenario</span><i data-lucide="sparkles" class="w-4 h-4 text-amber-400"></i>`;
+                renderStep5Blueprint();
+                showWarmToast("New 'What-If' Safeguard woven into your blueprint!");
+            }
+        }
+        function copyFinalSpec() {
+            const healed = activeData.discoveries.filter(d => d.healed);
+            let out = `# ${activeData.title} (Aura Fortified Blueprint)\n\n${activeData.rawText}\n\n## ✨ Aura Healed Safeguards\n`;
+            healed.forEach(h => {
+                out += `- ✓ ${h.healedClause}\n  (Resolved Unasked Question: ${h.question})\n`;
+            });
+            const temp = document.createElement('textarea');
+            temp.value = out;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            playAcousticChime('heal');
+            showWarmToast("Upgraded Blueprint copied to clipboard!");
+        }
+        function speakExecutiveSummary() {
+            if (!('speechSynthesis' in window)) {
+                showWarmToast("Voice synthesis not supported in this browser.");
+                return;
+            }
+            if (window.speechSynthesis.speaking) {
+                window.speechSynthesis.cancel();
+                document.getElementById('voiceSummaryText').textContent = "Listen to 20s Voice Brief";
+                return;
+            }
+            const top = activeData.discoveries[0];
+            const healedCount = activeData.discoveries.filter(d => d.healed).length;
+            const script = `Hello ${currentUser.split(' ')[0]}. For your ${activeData.title} blueprint, Aura uncovered ${activeData.discoveries.length} critical blindspots, and ${healedCount} have now been healed. The number one unasked question was: ${top.question}. We have injected automated safeguards into your final specification.`;
+            const utter = new SpeechSynthesisUtterance(script);
+            utter.rate = 1.02;
+            utter.onend = () => {
+                document.getElementById('voiceSummaryText').textContent = "Listen to 20s Voice Brief";
+            };
+            document.getElementById('voiceSummaryText').textContent = "Stop Voice Brief";
+            window.speechSynthesis.speak(utter);
+        }
+        window.onload = function() {
+            animateGoldenCanvas();
+            document.getElementById('blueprintInputArea').value = activeData.rawText;
+            lucide.createIcons();
+        };
+    </script>
+</body>
+</html>
