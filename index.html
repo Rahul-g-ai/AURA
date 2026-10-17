@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AURA // The Unasked Question Engine</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Instrument Serif (Editorial Luxury), Plus Jakarta Sans (Clean UI), JetBrains Mono (Tags) -->
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Instrument Serif"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        alabaster: '#FAF7F2',
+                        ivory: '#F4EFE6',
+                        sand: '#E7E0D3',
+                        espresso: '#1C1917',
+                        stonewarm: '#57534E',
+                        sol: {
+                            gold: '#F59E0B',
+                            amber: '#D97706',
+                            flame: '#EA580C',
+                            coral: '#E11D48',
+                            sage: '#059669'
+                        }
+                    },
+                    boxShadow: {
+                        'gold-glow': '0 20px 50px -12px rgba(245, 158, 11, 0.28), 0 0 24px rgba(245, 158, 11, 0.16)',
+                        'warm-card': '0 24px 48px -12px rgba(28, 25, 23, 0.07), 0 4px 16px rgba(28, 25, 23, 0.03)',
+                        'warm-hover': '0 30px 60px -15px rgba(217, 119, 6, 0.18), 0 0 0 1px rgba(245, 158, 11, 0.45)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Strictly Warm Luminous Palette — ZERO BLUE ANYWHERE */
+        body {
+            background-color: #FAF7F2;
+            background-image: 
+                radial-gradient(circle at 18% 15%, rgba(251, 191, 36, 0.14) 0%, transparent 45%),
+                radial-gradient(circle at 85% 80%, rgba(234, 88, 12, 0.10) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(244, 239, 230, 0.8) 0%, transparent 100%);
+            color: #1C1917;
+            overflow-x: hidden;
+            user-select: none;
+        }
+
+        /* Custom Warm Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F4EFE6;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D6CEBF;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #D97706;
+        }
+
+        /* Warm Frosted Glass Surfaces */
+        .warm-glass {
+            background: rgba(255, 253, 249, 0.82);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            border: 1px solid rgba(217, 119, 6, 0.16);
+        }
+
+        .warm-glass-card {
+            background: rgba(255, 253, 250, 0.90);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(28, 25, 23, 0.08);
+            transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .warm-glass-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(245, 158, 11, 0.55);
+            box-shadow: 0 28px 55px -15px rgba(217, 119, 6, 0.16);
+        }
+
+        /* Step Transition Animations */
+        .step-section {
+            display: none;
+            opacity: 0;
+            transform: translateY(18px) scale(0.99);
+            transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .step-section.active-step {
+            display: flex;
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        /* Golden Highlighter Pen Effect for Evidence */
+        .golden-highlight {
+            background: linear-gradient(120deg, rgba(251, 191, 36, 0.28) 0%, rgba(245, 158, 11, 0.16) 100%);
+            border-bottom: 2px solid #F59E0B;
+            padding: 2px 8px;
+            border-radius: 6px;
+            color: #1C1917;
+            font-weight: 500;
+        }
+
+        /* Floating Subtle Animation */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-7px); }
+        }
+        .float-pill {
+            animation: floatSlow 4.5s ease-in-out infinite;
+        }
+        .float-pill-delayed {
+            animation: floatSlow 5.2s ease-in-out 1.5s infinite;
+        }
+
+        /* Golden Screen Flash on Lightning Strike */
+        @keyframes goldFlash {
+            0% { opacity: 0.55; }
+            30% { opacity: 0.12; }
+            60% { opacity: 0.28; }
+            100% { opacity: 0; }
+        }
+        .strike-flash-active {
+            animation: goldFlash 0.6s ease-out forwards;
+        }
+
+        /* Magnetic Pill Button Shine */
+        .btn-liquid-gold {
+            background: linear-gradient(135deg, #1C1917 0%, #292524 100%);
+            color: #FAF7F2;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .btn-liquid-gold:hover {
+            transform: translateY(-2px) scale(1.015);
+            box-shadow: 0 20px 40px -10px rgba(217, 119, 6, 0.45);
+            border-color: #F59E0B;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-amber-200 selection:text-espresso">
+
+    <!-- Interactive Warm Golden Lightning Canvas -->
+    <canvas id="goldLightningCanvas" class="fixed inset-0 pointer-events-none z-0"></canvas>
+
+    <!-- Warm Golden Flash Overlay on Transitions -->
+    <div id="goldFlashOverlay" class="fixed inset-0 bg-amber-300 pointer-events-none z-50 opacity-0"></div>
+
+    <!-- Minimalist Floating Toast Notification -->
+    <div id="toastBox" class="fixed bottom-6 right-6 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- ==========================================================================
+         MINIMALIST TOP FLOATING NAVIGATION & STEP PROGRESS BAR
+         ========================================================================== -->
+    <header class="sticky top-0 z-40 px-4 sm:px-8 pt-4 pb-2">
+        <div class="max-w-5xl mx-auto warm-glass rounded-full px-4 sm:px-6 py-2.5 shadow-warm-card flex items-center justify-between gap-3">
+            <!-- Brand Identity -->
+            <button onclick="goToStep(1)" class="flex items-center gap-2.5 text-left group">
+                <div class="w-9 h-9 rounded-full bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-white shadow-md group-hover:rotate-12 transition-transform">
+                    <i data-lucide="zap" class="w-4 h-4 fill-current"></i>
+                </div>
+                <div>
+                    <span class="font-serif italic text-xl tracking-tight text-espresso font-normal">Aura</span>
+                    <span class="hidden sm:inline-block text-[10px] font-mono uppercase tracking-widest text-amber-700 bg-amber-100/80 px-2 py-0.5 rounded-full ml-1.5">Unasked Engine</span>
+                </div>
+            </button>
+
+            <!-- 5-Step Interactive Journey Pill -->
+            <nav class="flex items-center gap-1 sm:gap-2">
+                <button onclick="goToStep(1)" id="nav-step-1" class="step-dot px-2.5 py-1 rounded-full text-xs font-medium transition-all bg-espresso text-alabaster">
+                    1. Start
+                </button>
+                <span class="text-stone-300 text-xs">•</span>
+                <button onclick="goToStep(2)" id="nav-step-2" class="step-dot px-2.5 py-1 rounded-full text-xs font-medium text-stonewarm hover:text-espresso transition-all">
+                    2. Identity
+                </button>
+                <span class="text-stone-300 text-xs">•</span>
+                <button onclick="goToStep(3)" id="nav-step-3" class="step-dot px-2.5 py-1 rounded-full text-xs font-medium text-stonewarm hover:text-espresso transition-all">
+                    3. Blueprint
+                </button>
+                <span class="text-stone-300 text-xs">•</span>
+                <button onclick="goToStep(4)" id="nav-step-4" class="step-dot px-2.5 py-1 rounded-full text-xs font-medium text-stonewarm hover:text-espresso transition-all">
+                    4. Blindspots
+                </button>
+                <span class="text-stone-300 text-xs">•</span>
+                <button onclick="goToStep(5)" id="nav-step-5" class="step-dot px-2.5 py-1 rounded-full text-xs font-medium text-stonewarm hover:text-espresso transition-all">
+                    5. Healed Spec
+                </button>
+            </nav>
+
+            <!-- User Badge & Sound Toggle -->
+            <div class="flex items-center gap-2">
+                <div id="userHeaderBadge" class="hidden md:flex items-center gap-1.5 px-3 py-1 rounded-full bg-ivory border border-amber-500/20 text-xs font-medium text-espresso">
+                    <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                    <span id="headerUserName">Guest</span>
+                </div>
+                <button onclick="toggleSound()" id="soundToggleBtn" class="w-8 h-8 rounded-full bg-ivory hover:bg-amber-100/60 flex items-center justify-center text-stonewarm hover:text-amber-700 transition-colors" title="Toggle Acoustic Sparks">
+                    <i data-lucide="volume-2" class="w-4 h-4"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==========================================================================
+         MAIN GUIDED STAGE CONTAINER
+         ========================================================================== -->
+    <main class="flex-1 flex flex-col justify-center items-center px-4 sm:px-6 py-6 relative z-10 max-w-5xl w-full mx-auto">
+
+        <!-- ======================================================================
+             STEP 1: HERO SPLASH ("LET'S START")
+             ====================================================================== -->
+        <section id="step-1" class="step-section active-step w-full flex-col items-center text-center py-8 sm:py-14">
+            
+            <!-- Floating Aesthetic Pills -->
+            <div class="flex flex-wrap items-center justify-center gap-3 mb-8">
+                <span class="float-pill warm-glass px-4 py-1.5 rounded-full text-xs font-medium text-amber-800 shadow-sm flex items-center gap-1.5">
+                    <i data-lucide="sparkles" class="w-3.5 h-3.5 text-amber-500"></i>
+                    Uncover Missing Assumptions
+                </span>
+                <span class="float-pill-delayed warm-glass px-4 py-1.5 rounded-full text-xs font-medium text-orange-800 shadow-sm flex items-center gap-1.5">
+                    <i data-lucide="flame" class="w-3.5 h-3.5 text-orange-500"></i>
+                    Simulate Failure Dominoes
+                </span>
+                <span class="float-pill warm-glass px-4 py-1.5 rounded-full text-xs font-medium text-stone-700 shadow-sm flex items-center gap-1.5">
+                    <i data-lucide="wand-2" class="w-3.5 h-3.5 text-amber-600"></i>
+                    1-Click Auto-Heal Specs
+                </span>
+            </div>
+
+            <!-- Editorial Headline -->
+            <h1 class="font-serif text-5xl sm:text-7xl md:text-8xl text-espresso leading-[1.04] tracking-tight max-w-4xl mb-6">
+                Every failure begins with the <span class="italic text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-orange-600 to-rose-600">question</span> nobody thought to ask.
+            </h1>
+
+            <p class="text-base sm:text-lg text-stonewarm max-w-xl mx-auto leading-relaxed mb-10 font-normal">
+                Drop any project idea, dataset, or workflow. Watch golden lightning illuminate hidden blindspots, prioritize impact, and heal your blueprint in seconds.
+            </p>
+
+            <!-- Magnetic CTA Button -->
+            <div class="flex flex-col sm:flex-row items-center gap-4">
+                <button onclick="goToStep(2)" class="btn-liquid-gold px-9 py-4 rounded-full text-base font-semibold border border-amber-500/40 shadow-gold-glow flex items-center gap-3 group">
+                    <span>Let's Start</span>
+                    <span class="w-7 h-7 rounded-full bg-amber-500 text-espresso flex items-center justify-center group-hover:translate-x-1 transition-transform">
+                        <i data-lucide="zap" class="w-4 h-4 fill-current"></i>
+                    </span>
+                </button>
+
+                <button onclick="quickJumpDemo()" class="px-6 py-4 rounded-full warm-glass hover:bg-white text-sm font-medium text-stonewarm hover:text-espresso transition-all flex items-center gap-2">
+                    <span>Instant 1-Click Demo</span>
+                    <i data-lucide="arrow-up-right" class="w-4 h-4 text-amber-600"></i>
+                </button>
+            </div>
+
+            <!-- Interactive Cursor Hint -->
+            <p class="mt-14 text-xs font-mono uppercase tracking-widest text-stone-400 flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-amber-500 animate-ping"></span>
+                Move cursor or tap anywhere to arc golden lightning
+            </p>
+        </section>
+
+
+        <!-- ======================================================================
+             STEP 2: FRICTIONLESS STUDIO LOGIN & PERSONA LENS
+             ====================================================================== -->
+        <section id="step-2" class="step-section w-full max-w-xl mx-auto flex-col items-center py-6">
+            <div class="warm-glass-card w-full rounded-3xl p-7 sm:p-10 shadow-warm-card relative overflow-hidden">
+                <!-- Decorative Warm Top Glow -->
+                <div class=" -top-20 -right-20 w-44 h-44 bg-amber-400/20 rounded-full blur-3xl pointer-events-none absolute"></div>
+
+                <div class="flex items-center justify-between mb-6">
+                    <span class="text-xs font-mono uppercase tracking-widest text-amber-700 bg-amber-100/90 px-3 py-1 rounded-full font-semibold">Step 1 of 4 • Studio Pass</span>
+                    <button onclick="skipLoginAsGuest()" class="text-xs font-medium text-amber-700 hover:text-orange-700 underline underline-offset-4">
+                        Skip → Instant Guest
+                    </button>
+                </div>
+
+                <h2 class="font-serif text-4xl sm:text-5xl text-espresso mb-2">Who is stepping into the studio?</h2>
+                <p class="text-sm text-stonewarm mb-7">We tailor the unasked questions to your role and thinking lens.</p>
+
+                <!-- Simple Name Field -->
+                <div class="mb-6">
+                    <label class="block text-xs font-mono uppercase tracking-wider text-stonewarm mb-2">Your Name or Handle</label>
+                    <div class="relative">
+                        <input id="userNameInput" type="text" value="Aarav — Lead Architect" placeholder="e.g., Priya, Alex, or Product Team..." 
+                            class="w-full px-4 py-3.5 rounded-2xl bg-alabaster border border-stone-300 focus:border-amber-500 focus:bg-white focus:outline-none text-base font-medium text-espresso transition-all">
+                        <i data-lucide="user-check" class="w-4 h-4 text-amber-600 absolute right-4 top-1/2 -translate-y-1/2"></i>
+                    </div>
+                </div>
+
+                <!-- Choose Thinking Lens (3 Tactile Cards) -->
+                <div class="mb-8">
+                    <label class="block text-xs font-mono uppercase tracking-wider text-stonewarm mb-2.5">Select Your Primary Lens</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+                        <button type="button" onclick="selectPersona('PRODUCT', this)" class="persona-card text-left p-3.5 rounded-2xl border-2 border-amber-500 bg-amber-50/70 transition-all">
+                            <div class="w-8 h-8 rounded-xl bg-amber-500 text-white flex items-center justify-center mb-2">
+                                <i data-lucide="compass" class="w-4 h-4"></i>
+                            </div>
+                            <div class="font-bold text-xs text-espresso">Founder & Product</div>
+                            <div class="text-[11px] text-stonewarm mt-0.5">Users, edge-cases & trust</div>
+                        </button>
+
+                        <button type="button" onclick="selectPersona('ARCHITECT', this)" class="persona-card text-left p-3.5 rounded-2xl border border-stone-200 bg-alabaster/70 hover:border-amber-400 transition-all">
+                            <div class="w-8 h-8 rounded-xl bg-stone-200 text-espresso flex items-center justify-center mb-2">
+                                <i data-lucide="cpu" class="w-4 h-4"></i>
+                            </div>
+                            <div class="font-bold text-xs text-espresso">System Architect</div>
+                            <div class="text-[11px] text-stonewarm mt-0.5">Scale, latency & outages</div>
+                        </button>
+
+                        <button type="button" onclick="selectPersona('RISK', this)" class="persona-card text-left p-3.5 rounded-2xl border border-stone-200 bg-alabaster/70 hover:border-amber-400 transition-all">
+                            <div class="w-8 h-8 rounded-xl bg-stone-200 text-espresso flex items-center justify-center mb-2">
+                                <i data-lucide="shield-alert" class="w-4 h-4"></i>
+                            </div>
+                            <div class="font-bold text-xs text-espresso">Data & Risk Lead</div>
+                            <div class="text-[11px] text-stonewarm mt-0.5">Bias, leakage & audits</div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Continue Button -->
+                <button onclick="completeLogin()" class="w-full btn-liquid-gold py-4 rounded-2xl text-sm font-semibold flex items-center justify-center gap-2 shadow-gold-glow">
+                    <span>Enter Lightning Studio</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 text-amber-400"></i>
+                </button>
+            </div>
+        </section>
+
+
+        <!-- ======================================================================
+             STEP 3: EFFORTLESS INPUT ("WHERE DO I ADD CONTENT?" -> CRYSTAL CLEAR!)
+             ====================================================================== -->
+        <section id="step-3" class="step-section w-full flex-col items-center py-4">
+            <div class="text-center max-w-2xl mx-auto mb-7">
+                <span class="text-xs font-mono uppercase tracking-widest text-amber-700 bg-amber-100/90 px-3 py-1 rounded-full font-semibold">Step 2 of 4 • Choose or Type</span>
+                <h2 class="font-serif text-4xl sm:text-5xl text-espresso mt-3 mb-2">
+                    Welcome, <span id="welcomeUserSpan" class="italic text-amber-700">Architect</span>. Drop a spark.
+                </h2>
+                <p class="text-sm text-stonewarm">Pick a ready-made blueprint below with one click, or type your own project idea in the box.</p>
+            </div>
+
+            <!-- 3 Visual 1-Click Ready Blueprints (Covers Document, Dataset, Workflow from Problem Statement) -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full mb-6">
+                
+                <!-- Card 1: Project Document -->
